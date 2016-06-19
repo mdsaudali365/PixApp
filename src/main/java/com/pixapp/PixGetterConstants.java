@@ -1,4 +1,4 @@
-package com.qminder;
+package com.pixapp;
 
 public class PixGetterConstants{
 	public static final String clientName = "client_name";

@@ -17,7 +17,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.3.5.RELEASE</version>
                 <configuration>
-			        <mainClass>com.qminder.PixGetterApplicationInitializer</mainClass>
+			        <mainClass>com.pixapp.PixGetterApplicationInitializer</mainClass>
 			    </configuration>
                 <executions>
                     <execution>
