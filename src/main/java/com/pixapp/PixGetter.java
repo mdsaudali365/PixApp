@@ -1,9 +1,8 @@
-package com.pixapp;
+package com.qminder;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
@@ -70,8 +69,6 @@ public class PixGetter{
    
    private void downloadImages(List<WebElement> imageurls2){
 	   String image = null;
-	   InputStream in = null;
-	   OutputStream out = null;
 	     //get all images url  
 	     for (int m = 0; m < imageurls.size(); m++) {
 			try {
@@ -83,22 +80,17 @@ public class PixGetter{
 		    		 System.out.println(imageName);
 		    		 //download image  
 					 URL url = new URL(image.trim());  
-					 in = new BufferedInputStream(url.openStream());  
-					 out = new BufferedOutputStream(new FileOutputStream(env.getProperty(PixGetterConstants.downloadDir)+ "\\" + imageName));  
+					 InputStream in = new BufferedInputStream(url.openStream());  
+					 OutputStream out = new BufferedOutputStream(new FileOutputStream(env.getProperty(PixGetterConstants.downloadDir)+ "\\" + imageName));  
 					 for (int i; (i = in.read()) != -1;) { 
 		                 out.write(i);
 		                 }  
+		             in.close();  
+		             out.close();  
 	           	 }  
 			} catch (Exception e) {
 				continue;
 			}
 	     } 
-	     try{
-	    	 in.close();  
-             out.close(); 
-	     }
-	     catch(IOException e){
-	    	 System.err.println("Exception while closing resources "+e);
-	     }
    }
  }  
