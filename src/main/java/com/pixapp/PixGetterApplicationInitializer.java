@@ -1,4 +1,4 @@
-package com.qminder;
+package com.pixapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
