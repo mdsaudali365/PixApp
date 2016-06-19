@@ -94,8 +94,8 @@ public class PixGetter{
 			}
 	     } 
 	     try{
-	    	 in.close();  
-             out.close(); 
+	    	in.close();  
+             	out.close(); 
 	     }
 	     catch(IOException e){
 	    	 System.err.println("Exception while closing resources "+e);
